@@ -1,0 +1,120 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: dashboardva
+  datasource:
+    url: jdbc:oracle:thin:@HOST:PORT:SID
+    username: USERNAME
+    password: PASSWORD
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format-sql: true
+    show-sql: true
+vaadin:
+  launch-browser: true
+  csf:
+    enabled: true
+  whitelisted-packages:
+    - com.vaadin,
+    - org.vaadin,dev.hilla
+    - com.epic
+
+userconfig:
+  constant:
+    interval:
+      dev: 10000
+      prod: 60000
+    host:
+      dev: http://localhost:8085
+      preproduction: http://HOST:8085
+      prod: http://HOST:8085
+    page_link:
+      #dashboardva
+      #dashboards
+      dashboard:
+        out: /dashboardva/out/
+        post: /dashboardva/post/
+        bb: /dashboardva/bb/
+        xdchute: /dashboardva/xdchute/
+        prv: /dashboardva/prv/
+        c2m2: /dashboardva/c2m2/
+        pkgtd: /dashboardva/pkgtd/
+        zkz: /dashboardva/zkz/
+      dashboarda:
+      dashboardc:
+        dashboard1: /dashboard/out/
+        dashboard2: /dashboard/dbc2/
+        dashboard3: /dashboard/dbc3/
+        dashboard4: /dashboard/dbc4/
+        dashboard5: /dashboard/dbc5/
+        dashboard6: /dashboard/dbc6/
+        dashboard7: /dashboard/dbc7/
+  ora:
+    dburl_prod: jdbc:oracle:thin:USERNAME/PASSWORD@HOST:PORT:SID
+    dburl_stb: jdbc:oracle:thin:USERNAME/PASSWORD@HOST:PORT:SID
+  query:
+    dashboardc:
+      post:
+        query1: select *from lcv_jv_dashboard_post_1
+        query2: select *from lcv_jv_dashboard_post_2
+      c2_m2:
+        query1: select *from lcv_jv_dashboard_c2_m2_1
+        query2: select *from lcv_jv_dashboard_c2_m2_2
+        query3: select *from lcv_jv_dashboard_c2_m2_3
+        query4: select *from lcv_jv_dashboard_c2_m2_4
+      prv:
+        query1: select *from lcv_jv_dashboard_prv_1
+        query2: select *from lcv_jv_dashboard_prv_2
+        query3: select *from lcv_jv_dashboard_prv_3
+        query4: select *from lcv_jv_dashboard_prv_4
+        query5: select *from lcv_jv_dashboard_prv_5
+      xd_chute:
+        query1: select *from lcv_jv_dashboard_xd_chute_1
+        query2: select *from lcv_jv_dashboard_xd_chute_2
+        query3: select *from lcv_jv_dashboard_xd_chute_3
+        query4: select *from lcv_jv_dashboard_xd_chute_4
+      bb:
+        query1: select *from lcv_jv_dashboard_bb_c_1
+        query2: select *from lcv_jv_dashboard_bb_c_2
+        query3: select *from lcv_jv_dashboard_bb_c_3
+        query4: select *from lcv_jv_dashboard_bb_4
+        query5: select *from lcv_jv_dashboard_bb_5
+      out:
+        query1: select *from lcv_jv_dashboard_c_out_1
+        query2: select *from lcv_jv_dashboard_c_out_2
+      pkg_td:
+        query1: select *from lcv_jv_dashboard_pgk_td_1
+        query2: select *from lcv_jv_dashboard_pgk_td_c_2
+    dashboarda:
+      out:
+        query1: select *from lcv_jv_dashboard_a_out_1
+        query2: select *from lcv_jv_dashboard_a_out_2
+        query3: select *from lcv_jv_dashboard_a_out_3
+      bb:
+        query1: select *from lcv_jv_dashboard_bb_a_1
+        query2: select *from lcv_jv_dashboard_bb_a_2
+        query3: select *from lcv_jv_dashboard_bb_a_3
+        query4: select *from lcv_jv_dashboard_bb_a_4
+      xd:
+        query1: select *from lcv_jv_dashboard_xd_a_1
+        query2: select *from lcv_jv_dashboard_xd_a_2
+        query3:
+        query4: select *from lcv_jv_dashboard_xd_a_4
+        query5: select *from lcv_jv_dashboard_xd_a_5
+      zkz:
+        query1: select *from lcv_jv_dashboard_zkz_a_1
+        query2: select *from lcv_jv_dashboard_zkz_a_2
+        query3: select *from lcv_jv_dashboard_zkz_a_3
+      pkg_td:
+        query1: select *from lcv_jv_dashboard_pgk_td_a_1
+        query2: select *from lcv_jv_dashboard_pgk_td_a_2
+        query3: select *from lcv_jv_dashboard_pgk_td_a_3
+        query4: select *from lcv_jv_dashboard_pgk_td_a_4
+        query5: select *from lcv_jv_dashboard_pgk_td_a_5

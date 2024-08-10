@@ -1,0 +1,29 @@
+/*
+ * This file has been created by the Vaadin Theme Editor. Please note that
+ * manual changes to individual CSS properties may be overwritten by the theme editor.
+ */
+vaadin-app-layout.main-layout-app-layout-1::part(drawer) { padding:var(--lumo-space-xs); }
+
+vaadin-app-layout.main-layout-app-layout-1::part(navbar) { padding:var(--lumo-space-xs); }
+
+vaadin-grid::part(header-cell) { --lumo-font-size-s:var(--lumo-font-size-m);
+    background-color: var(--lumo-contrast-30pct);
+}
+
+
+ vaadin-grid.styling::part(it-status) {
+        background-color: var(--lumo-success-color-10pct);
+    }
+
+    vaadin-grid.styling::part(ul-status) {
+        background-color: var(--lumo-warning-color-10pct);
+    }
+
+    vaadin-grid.styling::part(loading-row-cell) {
+        background-color: var(--lumo-base-color);
+    }
+
+    vaadin-grid.styling::part(font-weight-bold) {
+        font-weight: bold;
+    }
+
