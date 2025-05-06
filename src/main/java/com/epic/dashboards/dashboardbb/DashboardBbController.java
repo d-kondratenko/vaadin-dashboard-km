@@ -5,6 +5,7 @@ import com.epic.configurations.ProjectDevConfig;
 import com.epic.general.DashboardForm;
 import com.epic.general.DashboardQuery;
 import com.epic.general.DashboardQueryService;
+import com.epic.general.GridItem;
 import com.epic.views.MainLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
@@ -12,6 +13,10 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.spring.annotation.UIScope;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 @Route(value = "bb", layout = MainLayout.class)
 //@RouteAlias("dashboards/bb/:warehouseNr/:pageNumber") //test
@@ -39,8 +44,10 @@ public class DashboardBbController extends BaseController implements BeforeEnter
 
         currentDashboard = getCurrentDashboardByWarehouseNrAndPageNumber(warehouseNr, pageNumber);
 
-        while(currentDashboard.getGridItems().isEmpty()){
+        List<GridItem> gr = Objects.requireNonNullElse(currentDashboard.getGridItems(), Collections.emptyList());
+        while(gr.isEmpty()){
             currentDashboard = getCurrentDashboardByWarehouseNrAndPageNumber(warehouseNr, String.valueOf(currentDashboard.getNextPage()));
+            gr = Objects.requireNonNullElse(currentDashboard.getGridItems(), Collections.emptyList());
         }
 
         this.nextPage = currentDashboard.getNextPage();
